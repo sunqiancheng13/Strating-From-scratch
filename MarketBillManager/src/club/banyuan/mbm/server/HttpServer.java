@@ -1,0 +1,51 @@
+package club.banyuan.mbm.server;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+/**
+ * 截取Form 提交的post数据
+ */
+public class HttpServer {
+
+  public static void main(String[] args) throws IOException {
+
+    ServerSocket serverSocket = new ServerSocket(2000);
+
+    while (true) {
+      // 阻塞，直到浏览器发送请求，接收到浏览器请求之后，返回socket对象
+      Socket clientSocket = serverSocket.accept();
+      // 创建线程类，需要一个线程类处理一次浏览器请求
+      SocketHandler socketHandler = new SocketHandler(clientSocket);
+      socketHandler.start();
+    }
+
+    // response header
+    // HTTP/1.1 200 OK
+    // Content-Type: text/html; charset=utf-8
+    // Content-Length: 1234
+    //
+    // bytes
+
+    // "HTTP/1.1 200 OK\r\n"
+    // "Content-Type: text/html; charset=utf-8\r\n"
+    // "Content-Length: 1234\r\n"
+    // "\r\n"
+    // data
+
+    // out.writeBytes("HTTP/1.1 200 OK");
+    // out.writeBytes("\r\n");
+    // out.writeBytes("Content-Type: text/html; charset=utf-8");
+    // out.writeBytes("\r\n");
+    // out.writeBytes(("Content-Length: " + resourceAsStream.available()));
+    // out.writeBytes("\r\n");
+    // out.writeBytes("\r\n");
+  }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/practice/Form/Form.iml" filepath="$PROJECT_DIR$/practice/Form/Form.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/JsonSerialize/JsonSerialize.iml" filepath="$PROJECT_DIR$/example/JsonSerialize/JsonSerialize.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice/JsonServer/JsonServer.iml" filepath="$PROJECT_DIR$/practice/JsonServer/JsonServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MarketBillManager.iml" filepath="$PROJECT_DIR$/MarketBillManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/RegexDemo/RegexDemo.iml" filepath="$PROJECT_DIR$/example/RegexDemo/RegexDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+    </modules>
+  </component>
+</project>
