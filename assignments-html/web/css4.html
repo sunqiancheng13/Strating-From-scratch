@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            height: 30px;
+            width: 150px;
+            text-align: center;
+        }
+
+        .td2 {
+            width: 300px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div style="position: absolute;top: 5%;left: 5%;">
+    <div>
+        <h2>在线拍卖系统</h2>
+        <input type="button" value="注销" style="position: absolute;right: 10px;top: 30px">
+    </div>
+    <div class=".aline" style=" background-color:#E6E3E3;;width:950px ;height:1px"></div>
+    <div>
+        <table border=2px;
+               style="border-color: aquamarine;border-collapse: collapse; position: relative;left: 10px;top: 30px">
+            <tr>
+                <td>名称：</td>
+                <td class="td2">花瓶</td>
+            </tr>
+            <tr>
+                <td>描述：</td>
+                <td class="td2">古董</td>
+            </tr>
+            <tr>
+                <td>开始时间：</td>
+                <td class="td2">2010-01-10 16：30：30</td>
+            </tr>
+            <tr>
+                <td>结束时间：</td>
+                <td class="td2">2010-01-10 16：30：30</td>
+            </tr>
+            <tr>
+                <td>起拍价：</td>
+                <td class="td2">2500</td>
+            </tr>
+        </table>
+    </div>
+    <div style="position: absolute ;left: 600px;top: 100px">
+        <img src="WEB-INF/images/ad20.jpg">
+    </div>
+    <div>
+        <table border=2px;
+               style="border-color: aquamarine;border-collapse: collapse; position: relative;left: 10px;top: 60px">
+            <tr>
+                <td style="height: 100px;width: 900px">
+                    <div >
+                        <span type="text" style="position: absolute ; left: 10px;top:10px ;height: 30px">出价：</span>
+                        <input type="text" style="position: absolute ; left: 60px;top:10px;height: 20px">
+                        <input type="button" value="竞拍" style="position: absolute ; left: 220px;top:10px;width: 100px;height: 30px;background-image: url('WEB-INF/images/butto.jpg')">
+                   <span style="color: red;position: absolute ; left: 10px;top:50px ;height: 30px">不能高于最低竞拍价</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <input type="button" value="刷新" style="color: white; position: relative ; left: 10px;top:70px;width: 100px;height: 30px;background-image: url('WEB-INF/images/butto.jpg')">
+        <input type="button" value="返回列表" style="color:white;position: relative ; left: 30px;top:70px;width: 100px;height: 30px;background-image: url('WEB-INF/images/butto.jpg')">
+    </div>
+    <div style="text-align: left ; position: relative;top:100px">
+        出价记录
+        <table border=2px;
+               style="border-color: aquamarine;border-collapse: collapse; position: relative;left: 10px;top: 30px">
+            <tr style="text-align: center">
+                <th>竞拍时间</th>
+                <th>竞拍价格</th>
+                <th>竞拍人</th>
+            </tr>
+            <tr>
+                <td>2020-01-01 12:00:00</td>
+                <td>23333333</td>
+                <td>我</td>
+            </tr>
+            <tr>
+                <td>2020-01-01 12:00:00</td>
+                <td>23333333</td>
+                <td>我</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

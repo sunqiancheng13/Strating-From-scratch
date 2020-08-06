@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1 {
+            position: absolute;
+            left: 20px;
+            top: 50px;
+        }
+
+        .div2 {
+            position: absolute;
+            left: 500px;
+            top: 50px;
+        }
+
+        .div4 {
+            position: relative;
+            top: -40px;
+            left: 110px;
+        }
+
+        .div3 {
+            position: relative;
+            top: -75px;
+            left: 220px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="div0">
+    <div class="div1">
+        <img src="WEB-INF/images/img1.jpg">
+    </div>
+    <div class="div2">
+        <table>
+            <tr>
+                <th>
+                    <h3>用户登录</h3>
+                </th>
+            </tr>
+            <tr>
+                <th>用户名：</th>
+                <th><input type="text" class="input"></th>
+            </tr>
+            <tr>
+                <th>密码：</th>
+                <th><input type="password" class="input"></th>
+            </tr>
+            <tr>
+                <th>验证码：</th>
+                <th><input type="text" style="width: 50px"> <img src="WEB-INF/images/img2.jpg"> <a href="www"
+                                                                                                   style="color: aqua;font-size: 2px">
+                    看不清</a></th>
+            </tr>
+        </table>
+        <p style="font-size: 1px"><input type="checkbox"> 下次自动登录</p>
+        <p></p>
+        <div>
+            <input style="background: url('WEB-INF/images/butto.jpg');color: aquamarine;width: 102px;height: 40px" type="submit"
+                   value="登录">
+        </div>
+        <div class="div4">
+            <input style="background: url('WEB-INF/images/butto.jpg');color: aquamarine;width: 102px;height: 40px" type="submit"
+                   value="注册">
+        </div>
+        <div class="div3">
+            <a href="ssss" style="color: aqua;font-size: 2px">忘记密码？</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
