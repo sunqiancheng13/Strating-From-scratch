@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <script type="text/javascript">
+        function demo(){
+            //获取当前日期
+            var nowDate=new Date();
+            //截止日期
+            var endDate=new Date('2020/8/06 20:00:00');
+            var diffTime=parseInt((endDate.getTime()-nowDate.getTime())/1000);
+            //将时间转化为时 分 秒
+            var hour,minute,second;
+
+            second=diffTime%60;//秒
+            minute=parseInt(diffTime/60)%60;
+            hour=parseInt(diffTime/60/60);
+
+            var time='剩余：'+hour+'小时'+minute+'分钟'+second+'秒';
+            document.body.innerHTML=time;
+            setTimeout(demo,1000);
+        }
+        // demo();
+        // setInterval('demo()',1000);
+        // demo();
+        // setInterval(demo,1000);
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+    demo();
+</script>
+</body>
+</html>

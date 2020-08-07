@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div {
+            text-align: center;
+        }
+
+        #a1 {
+            text-decoration: none;
+            color: aqua;
+        }
+
+        #div1 div{
+
+        }
+        label{
+            font-size: 1px;
+            color: red;
+            left: 600px;
+        }
+
+        .t{
+            left: 600px;
+        }
+        .box {
+            position: absolute;
+            right: 600px;
+        }
+    </style>
+    <script>
+        function name() {
+         var x = document.getElementById("name").value;
+         var result = /[A-Za-z0-9_\-\u4e00-\u9fa5]+/.text;
+            if(!result){
+                document.getElementById("ph").innerHTML("用户名输入有误");
+            }
+        }
+        function password() {
+            var x = document.getElementById("psd").value;
+            var result = /\W{6,12}/.text;
+            if(!result){
+                document.getElementById("ph").innerHTML("密码格式输入有误");
+            }
+        }
+        function sfz() {
+            var x = document.getElementById("sfz").value;
+            var result = /\d{17}[\d|x]|\d{15}/.text;
+            if(!result){
+                document.getElementById("ph").innerHTML("身份证格式输入有误");
+            }
+        }
+        function phone() {
+            var x = document.getElementById("phone").value;
+            var result = /[0-9-()（）]{7,18}/.text;
+            if(!result){
+                document.getElementById("ph").innerHTML("电话号码格式输入有误");
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <h1>用户登录</h1>
+    <form>
+    <div1 id="div1">
+        <label class="t" id="n"> 用户名要求不低于6个字符</label><br/>
+        <div class="box"> *用户名：<input type="text" id="name" onblur="name()"></div><br/>
+        <label class="t" id="p">密码要求不低于6个字符</label><br/>
+        <div class="box">*密码：<input type="password" id="psd" onblur="password()"></div><br/>
+        <label class="t" id="s">身份证号必填</label><br/>
+        <div class="box">*身份证号：<input type="text" id="sfz" onblur="sfz()"></div><br/>
+        <label class="t" id="ph">电话号码必填</label><br/>
+        <div class="box">*电话：<input type="text" id="phone" onblur="phone()"></div><br/>
+        <p> </p>
+        <div class="box">*住址：<input type="text"></div><br/>
+        <p> </p>
+        <div class="box">*邮政编码：<input type="text"></div><br/>
+        <p> </p>
+        <div style="right:200px">*验证码：<input style="width: 50px" type="text"> <img src="WEB-INF/images/img2.jpg"> <a href="kanbuqing" style="color: aqua" >看不清</a></div><br/>
+        <p> </p>
+        <p><input type="checkbox" width="40px"> 我同意 <a href="http://www.baidu.com" id="a1">《服务条款》</a></p>
+
+        <div>
+            <input style="background: url('../WEB-INF/images/butto.jpg');color: aquamarine;width: 102px;height: 40px" type="submit" value="立即注册">
+        </div>
+    </div1>
+    </form>
+</div>
+</body>
+</html>

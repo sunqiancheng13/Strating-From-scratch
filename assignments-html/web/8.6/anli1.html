@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            position: relative;
+        }
+        .slider_indicators_btn1{
+            position: absolute;
+            left:160px;
+            top:300px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #999;
+        }
+        .slider_indicators_btn2{
+            position: absolute;
+            left:200px;
+            top:300px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #999;
+        }
+        .active{
+            background-color: #e1251b;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+<img id="advImg" src="images/01.jpg" />
+<i class="slider_indicators_btn1 active" id="1" onclick="lick()" onmouseout="straing()"  ></i>
+<i class="slider_indicators_btn2 " id="2" onclick="lick()" onmouseout="straing()" ></i>
+</div>
+<script>
+    var intervalObj;
+    intervalObj = setInterval(changePic,1000);
+    var iArray = document.getElementsByTagName("i");
+    var i = 1;
+    function over() {
+        clearInterval(intervalObj);
+    }
+    function straing() {
+       setInterval(changePic,1000)
+    }
+
+
+    function changePic(){
+       defaultColor();
+        i = i%2 + 1;
+        var j = i-1;
+       iArray[j].style.backgroundColor = "#e1251b";
+        document.getElementById("advImg").src="images/0"+i+".jpg";
+    }
+
+    function defaultColor() {
+        for(var i=0;i<iArray.length;i++){
+            iArray[i].style.backgroundColor="#999";
+        }
+    }
+
+    function lick() {
+        document.getElementById("advImg").src="images/0"+this.id+".jpg";
+        var j = parseInt(this.id) -1;
+        defaultColor();
+        iArray[j].style.backgroundColor = "#e1251b";
+        clearInterval(intervalObj);
+    }
+
+    // for(var j=0;j<iArray.length;j++){
+    //     iArray[j].onclick = function () {
+    //         document.getElementById("advImg").src="images/0"+this.id+".jpg";
+    //         var j = parseInt(this.id) -1;
+    //         defaultColor();
+    //         iArray[j].style.backgroundColor = "#e1251b";
+    //         clearInterval(intervalObj);
+    //     }
+    // }
+</script>
+</body>
+</html>
