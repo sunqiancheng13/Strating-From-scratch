@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            text-align: center;
+        }
+    </style>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            function Money1() {
+                var sum = 0;
+                $(".price").each(function () {
+                    var f=$(this).parents("tr").find("input[type='checkbox']").prop("checked");
+                    if(f == true){
+                        sum +=parseInt($(this).html());
+                    }
+                });
+                $("#moneyAll").html(sum);
+            }
+
+            Money1();
+
+            $(".remove").click(function () {
+                 $(this).parents("tr").remove();
+                 Money1();
+            });
+
+            $(".removeAll").click(function () {
+                $(".price").each(function () {
+                  var f= $(this).parents("tr").find("input[type='checkbox']").prop("checked");
+                  if (f  == true){
+                      $(this).parents("tr").remove();
+                  }
+                });
+                Money1();
+            });
+
+            $("#1").click(function () {
+                var v = $("#nub").val();
+                if (v > 0) {
+                    v--;
+                    $("#nub").attr("value", v);
+                    var money = $("#money").html() * v;
+                    $("#all").html(money);
+                    Money1();
+                }
+            });
+            $("#2").click(function () {
+                var v = $("#nub").val();
+                v++;
+                $("#nub").attr("value", v);
+                var money = $("#money").html() * v;
+                $("#all").html(money);
+                Money1();
+            });
+
+            $("#b1").click(function () {
+                var v = $("#nub1").val();
+                if (v > 0) {
+                    v--;
+                    $("#nub1").attr("value", v);
+                    var money = $("#money1").html() * v;
+                    $("#all1").html(money);
+                    Money1();
+                }
+            });
+            $("#bb1").click(function () {
+                var v = $("#nub1").val();
+                v++;
+                $("#nub1").attr("value", v);
+                var money = $("#money1").html() * v;
+                $("#all1").html(money);
+                Money1();
+            });
+
+            $("#b2").click(function () {
+                var v = $("#nub2").val();
+                if (v > 0) {
+                    v--;
+                    $("#nub2").attr("value", v);
+                    var money = $("#money2").html() * v;
+                    $("#all2").html(money);
+                    Money1();
+                }
+            });
+            $("#bb2").click(function () {
+                var v = $("#nub2").val();
+                v++;
+                $("#nub2").attr("value", v);
+                var money = $("#money2").html() * v;
+                $("#all2").html(money);
+                Money1();
+            });
+
+            $("#b3").click(function () {
+                var v = $("#nub3").val();
+                if (v > 0) {
+                    v--;
+                    $("#nub3").attr("value", v);
+                    var money = $("#money3").html() * v;
+                    $("#all3").html(money);
+                    Money1();
+                }
+            });
+            $("#bb3").click(function () {
+                var v = $("#nub3").val();
+                v++;
+                $("#nub3").attr("value", v);
+                var money = $("#money3").html() * v;
+                $("#all3").html(money);
+                Money1();
+            });
+
+            $("input[ type ='checkbox']").click(function () {
+                Money1();
+            });
+        });
+
+
+
+        function setAll() {
+            var val = $("#chAll").prop("checked");
+            $("input").each(function () {
+                this.checked = val;
+            });
+        }
+    </script>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <td>勾选</td>
+            <td>商品名称</td>
+            <td>商品描述</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>总价</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>纯牛奶</td>
+            <td>商品描述</td>
+            <td><span id="money1">20</span></td>
+            <td><input type="button" id="b1" value="-">
+                <input type="text" id="nub1" value="1" style="width: 40px ;text-align: center">
+                <input type="button" id="bb1" value="+"></td>
+            <td><span id="all1" class="price">20</span></td>
+            <td><input type="button" class="remove" value="删除"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>纯牛奶</td>
+            <td>商品描述</td>
+            <td><span id="money2">20</span></td>
+            <td><input type="button" id="b2" value="-">
+                <input type="text" id="nub2" value="1" style="width: 40px ;text-align: center">
+                <input type="button" id="bb2" value="+"></td>
+            <td><span id="all2" class="price">20</span></td>
+            <td><input type="button" class="remove" value="删除"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>纯牛奶</td>
+            <td>商品描述</td>
+            <td><span id="money3">20</span></td>
+            <td><input type="button" id="b3" value="-">
+                <input type="text" id="nub3" value="1" style="width: 40px ;text-align: center">
+                <input type="button" id="bb3" value="+"></td>
+            <td><span id="all3" class="price">20</span></td>
+            <td><input type="button" class="remove" value="删除"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>纯牛奶</td>
+            <td>商品描述</td>
+            <td><span id="money">20</span></td>
+            <td><input type="button" id="1" value="-">
+                <input type="text" id="nub" value="1" style="width: 40px ;text-align: center">
+                <input type="button" id="2" value="+"></td>
+            <td><span id="all" class="price">20</span></td>
+            <td><input type="button" class="remove" value="删除"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="chAll" onclick="setAll()"></td>
+            <td><input type="button" class="removeAll" value="选中删除商品"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span id="moneyAll">1000</span></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
