@@ -1,9 +1,8 @@
 package club.banyuan.servlet;
 
-
 import club.banyuan.pojo.User;
+import club.banyuan.service.UserService;
 import club.banyuan.service.impl.UserServiceImpl;
-import com.sun.net.httpserver.HttpServer;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,27 +14,28 @@ import java.io.IOException;
 @WebServlet(name = "LoginServlet",urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        String url = "login.jsp";
+        UserService userService = new UserServiceImpl();
+        try {
+            User user = userService.login(username,password);
+            if(user!=null) {
+                request.setAttribute("user",user);
+                url ="index.jsp";
+            }
+            else{
+                request.setAttribute("errorMsg","用户名或密码错误");
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+        //response.sendRedirect(url);
+        request.getRequestDispatcher(url).forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String landName = request.getParameter("landName");
-        String landPassword = request.getParameter("landPassword");
-
-        User user = new User();
-
-        user.setLoginName(landName);
-        user.setPassword(landPassword);
-
-        UserServiceImpl userService = new UserServiceImpl();
-        try {
-            if (userService.login(user) != null){
-                response.sendRedirect("Sell.html");
-            }else {
-                response.sendRedirect("login.html");
-            }
-        } catch (Exception e) {
-            response.sendRedirect("login.html");
-        }
+        doPost(request,response);
     }
 }

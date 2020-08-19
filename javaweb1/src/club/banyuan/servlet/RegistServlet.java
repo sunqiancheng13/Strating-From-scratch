@@ -36,10 +36,10 @@ public class RegistServlet extends HttpServlet {
         UserService userService = new UserServiceImpl();
         try {
             User newUser = userService.register(user);
-            response.sendRedirect("login.html");
+            response.sendRedirect("login.jsp");
         } catch (Exception throwables) {
             //throwables.printStackTrace();
-            response.sendRedirect("regist.html");
+            response.sendRedirect("regist.jsp");
         }
 
 //        System.out.println(loginName+"  "+password+"   "+checkPwd);

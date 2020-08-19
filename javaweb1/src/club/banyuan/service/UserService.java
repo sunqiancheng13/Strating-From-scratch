@@ -6,5 +6,5 @@ import java.sql.SQLException;
 
 public interface UserService {
     public User register(User user) throws SQLException;
-    public User login(User user) throws SQLException, Exception;
+    public User login(String username,String password) throws Exception;
 }
